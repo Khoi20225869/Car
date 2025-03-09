@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c1d599b7df7ab74f8bd4213df920c37, type: 3}
+  m_Name: D_Vehicles
+  m_EditorClassIdentifier: 
+  playerVehicles:
+  - initialized: 0
+    vehicle: {fileID: 6148049137697950882, guid: cec54213870c08e4aa55b0bc3ae796db, type: 3}
+    price: 0
+    engineTorque: 0
+    handling: 0
+    speed: 0
+    upgradedEngineEfficiency: 0
+    upgradedHandlingEfficiency: 0
+    upgradedSpeedEfficiency: 0
+  - initialized: 0
+    vehicle: {fileID: 3179726825678589029, guid: e63fb9e2788010245844c74af5558657, type: 3}
+    price: 1000
+    engineTorque: 100
+    handling: 0
+    speed: 0
+    upgradedEngineEfficiency: 0
+    upgradedHandlingEfficiency: 0
+    upgradedSpeedEfficiency: 0
+  - initialized: 0
+    vehicle: {fileID: 2043430982058194867, guid: c126f7a1f373fc248bc7072118d732ae, type: 3}
+    price: 2000
+    engineTorque: 0
+    handling: 0
+    speed: 0
+    upgradedEngineEfficiency: 0
+    upgradedHandlingEfficiency: 0
+    upgradedSpeedEfficiency: 0
+  - initialized: 0
+    vehicle: {fileID: 6827220300605695715, guid: 870515e668c37054baded85baea48490, type: 3}
+    price: 3000
+    engineTorque: 0
+    handling: 0
+    speed: 0
+    upgradedEngineEfficiency: 0
+    upgradedHandlingEfficiency: 0
+    upgradedSpeedEfficiency: 0
+  - initialized: 0
+    vehicle: {fileID: 180928512090189874, guid: 76860c38d8bce074db02d2ba9474ff70, type: 3}
+    price: 4000
+    engineTorque: 0
+    handling: 0
+    speed: 0
+    upgradedEngineEfficiency: 0
+    upgradedHandlingEfficiency: 0
+    upgradedSpeedEfficiency: 0
+  - initialized: 0
+    vehicle: {fileID: 3952537371307611177, guid: 5847a901b3bc41a43bd31c83c9990219, type: 3}
+    price: 5000
+    engineTorque: 0
+    handling: 0
+    speed: 0
+    upgradedEngineEfficiency: 0
+    upgradedHandlingEfficiency: 0
+    upgradedSpeedEfficiency: 0
+  - initialized: 0
+    vehicle: {fileID: 1534646233352527198, guid: 858c40fb4c613564f9749e20dbfb15b7, type: 3}
+    price: 6000
+    engineTorque: 0
+    handling: 0
+    speed: 0
+    upgradedEngineEfficiency: 0
+    upgradedHandlingEfficiency: 0
+    upgradedSpeedEfficiency: 0
+  - initialized: 0
+    vehicle: {fileID: 9034434998587326771, guid: 14f873988281ea444b9a847057cebb22, type: 3}
+    price: 7000
+    engineTorque: 0
+    handling: 0
+    speed: 0
+    upgradedEngineEfficiency: 0
+    upgradedHandlingEfficiency: 0
+    upgradedSpeedEfficiency: 0
