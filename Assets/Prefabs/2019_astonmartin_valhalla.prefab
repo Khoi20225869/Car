@@ -2591,6 +2591,8 @@ GameObject:
   - component: {fileID: 1426570110449426995}
   - component: {fileID: 1534646233352527198}
   - component: {fileID: -4401401301326590860}
+  - component: {fileID: 1839487908414281005}
+  - component: {fileID: 4898442658671208741}
   m_Layer: 8
   m_Name: 2019_astonmartin_valhalla
   m_TagString: Untagged
@@ -2937,6 +2939,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vehicleSaveName: 
   carController: {fileID: 1534646233352527198}
+--- !u!114 &1839487908414281005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8794934120961253742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 150a61b6c208132468472b911d824439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carController: {fileID: 1534646233352527198}
+  wheelManage: {fileID: 4898442658671208741}
+  saveFileName: 2019_astonmartin_valhalla
+  loadout:
+    paint: {r: 1, g: 1, b: 1, a: 0}
+    wheel: -1
+--- !u!114 &4898442658671208741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8794934120961253742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0da9d787d8382a41816915d777cda31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Apply: {fileID: 1839487908414281005}
+  List: {fileID: 11400000, guid: de7053a154590a44bba6f69a813c6657, type: 2}
 --- !u!1 &8813661931997419371
 GameObject:
   m_ObjectHideFlags: 0

@@ -1618,6 +1618,8 @@ GameObject:
   - component: {fileID: 613403226031990955}
   - component: {fileID: 3179726825678589029}
   - component: {fileID: -1444546951579466465}
+  - component: {fileID: 4686727781613555433}
+  - component: {fileID: 7369499685637458952}
   m_Layer: 8
   m_Name: 2013_lamborghini_veneno
   m_TagString: Untagged
@@ -1964,6 +1966,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vehicleSaveName: 
   carController: {fileID: 3179726825678589029}
+--- !u!114 &4686727781613555433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5872992235422213252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 150a61b6c208132468472b911d824439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carController: {fileID: 3179726825678589029}
+  wheelManage: {fileID: 7369499685637458952}
+  saveFileName: 2013_lamborghini_veneno
+  loadout:
+    paint: {r: 1, g: 1, b: 1, a: 0}
+    wheel: -1
+--- !u!114 &7369499685637458952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5872992235422213252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0da9d787d8382a41816915d777cda31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Apply: {fileID: 4686727781613555433}
+  List: {fileID: 11400000, guid: de7053a154590a44bba6f69a813c6657, type: 2}
 --- !u!1 &6135038994414127110
 GameObject:
   m_ObjectHideFlags: 0

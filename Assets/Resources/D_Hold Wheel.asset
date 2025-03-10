@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: D_Hold Wheel
   m_EditorClassIdentifier: 
   wheels:
-  - wheel: {fileID: 5108533107561366660, guid: 38c5607d538695441b30d0200eb07bd9, type: 3}
   - wheel: {fileID: 8895668465151374516, guid: 26ab865a7169f4248b3c69b5ef3ccef3, type: 3}
   - wheel: {fileID: 8594930776675238536, guid: 2c3f87e2c23da3d429eaed60c06f91af, type: 3}
   - wheel: {fileID: 1279189629830538198, guid: 49cc3b5a4b04d0342ad7efff88e9d475, type: 3}

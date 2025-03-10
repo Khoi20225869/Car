@@ -1949,6 +1949,8 @@ GameObject:
   - component: {fileID: 4362178191490594735}
   - component: {fileID: 9034434998587326771}
   - component: {fileID: -6880633209022478961}
+  - component: {fileID: 3552871581963437089}
+  - component: {fileID: 6735943355021561435}
   m_Layer: 8
   m_Name: 2019_lamborghini_svj
   m_TagString: Untagged
@@ -2295,6 +2297,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vehicleSaveName: 
   carController: {fileID: 9034434998587326771}
+--- !u!114 &3552871581963437089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6809317400919399056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 150a61b6c208132468472b911d824439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carController: {fileID: 9034434998587326771}
+  wheelManage: {fileID: 6735943355021561435}
+  saveFileName: 2019_lamborghini_svj
+  loadout:
+    paint: {r: 1, g: 1, b: 1, a: 0}
+    wheel: -1
+--- !u!114 &6735943355021561435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6809317400919399056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0da9d787d8382a41816915d777cda31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Apply: {fileID: 3552871581963437089}
+  List: {fileID: 11400000, guid: de7053a154590a44bba6f69a813c6657, type: 2}
 --- !u!1 &6991408817186895478
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,14 +6,17 @@ using UnityEngine;
 public class D_ApplyCustomize : MonoBehaviour
 {
    public RCC_CarControllerV3 carController;
-   
+   public D_UpgradeWheel wheelManage;
 
    public string saveFileName = "";
    public D_SaveCustomizeParameter loadout = new D_SaveCustomizeParameter();
 
    private void OnEnable()
    {
-      
+      Load();
+
+      if (wheelManage)
+         wheelManage.Initialize();
    }
 
    public void Save()

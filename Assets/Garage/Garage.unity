@@ -309,7 +309,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6865942}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 89421702}
+        m_TargetAssemblyTypeName: D_Manage_Update, Assembly-CSharp
+        m_MethodName: ChangeWheels
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6865942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1366,6 +1378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 89421701}
   - component: {fileID: 89421700}
+  - component: {fileID: 89421702}
   m_Layer: 0
   m_Name: Garage_SceneManager
   m_TagString: Untagged
@@ -1425,6 +1438,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &89421702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89421699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd7f26d8405b07042a684175faf93b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vehicle: {fileID: 0}
 --- !u!1 &97526900
 GameObject:
   m_ObjectHideFlags: 0
@@ -37486,7 +37512,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 548606489}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 89421702}
+        m_TargetAssemblyTypeName: D_Manage_Update, Assembly-CSharp
+        m_MethodName: ChangeWheels
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &548606489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39238,7 +39276,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 743206274}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 89421702}
+        m_TargetAssemblyTypeName: D_Manage_Update, Assembly-CSharp
+        m_MethodName: ChangeWheels
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &743206274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42631,7 +42681,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1171291323}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 89421702}
+        m_TargetAssemblyTypeName: D_Manage_Update, Assembly-CSharp
+        m_MethodName: ChangeWheels
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1171291323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45352,7 +45414,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1390014362}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 89421702}
+        m_TargetAssemblyTypeName: D_Manage_Update, Assembly-CSharp
+        m_MethodName: ChangeWheels
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1390014362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49293,7 +49367,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1782740091}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 89421702}
+        m_TargetAssemblyTypeName: D_Manage_Update, Assembly-CSharp
+        m_MethodName: ChangeWheels
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1782740091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49413,7 +49499,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1790960117}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 89421702}
+        m_TargetAssemblyTypeName: D_Manage_Update, Assembly-CSharp
+        m_MethodName: ChangeWheels
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1790960117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53869,6 +53967,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1934464131}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!224 &1278620409492340899
 RectTransform:

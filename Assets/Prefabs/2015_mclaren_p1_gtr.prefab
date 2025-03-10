@@ -1082,6 +1082,8 @@ GameObject:
   - component: {fileID: 7689756546088932636}
   - component: {fileID: 2043430982058194867}
   - component: {fileID: -6370017534330799016}
+  - component: {fileID: 2716130599545465685}
+  - component: {fileID: 1208794536698597635}
   m_Layer: 8
   m_Name: 2015_mclaren_p1_gtr
   m_TagString: Untagged
@@ -1428,6 +1430,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vehicleSaveName: 
   carController: {fileID: 2043430982058194867}
+--- !u!114 &2716130599545465685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3747604104143127214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 150a61b6c208132468472b911d824439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carController: {fileID: 2043430982058194867}
+  wheelManage: {fileID: 1208794536698597635}
+  saveFileName: 2015_mclaren_p1_gtr
+  loadout:
+    paint: {r: 1, g: 1, b: 1, a: 0}
+    wheel: -1
+--- !u!114 &1208794536698597635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3747604104143127214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0da9d787d8382a41816915d777cda31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Apply: {fileID: 2716130599545465685}
+  List: {fileID: 11400000, guid: de7053a154590a44bba6f69a813c6657, type: 2}
 --- !u!1 &4261057161306828777
 GameObject:
   m_ObjectHideFlags: 0
