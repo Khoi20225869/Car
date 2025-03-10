@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class D_UpgradeWheel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private D_ApplyCustomize Apply;
+
+    public void Initialize()
     {
-        
+        int wheelIndex = Apply.loadout.wheel;
+
+        if (wheelIndex != -1)
+            D_Customize.ChangeWheels(Apply.carController, D_HoldWheel.Instance.wheels[wheelIndex].wheel, true);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateWheel(int wheelIndex)
     {
-        
+        Apply.loadout.wheel = wheelIndex;
+        Apply.Save();
+        D_Customize.ChangeWheels(Apply.carController, D_HoldWheel.Instance.wheels[wheelIndex].wheel, true);
     }
 }

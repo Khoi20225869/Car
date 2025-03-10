@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class D_ApplyCustomize : MonoBehaviour
 {
-   [SerializeField] private RCC_CarControllerV3 carController;
+   public RCC_CarControllerV3 carController;
    
 
    public string saveFileName = "";
@@ -14,5 +14,24 @@ public class D_ApplyCustomize : MonoBehaviour
    private void OnEnable()
    {
       
+   }
+
+   public void Save()
+   {
+      PlayerPrefs.SetString(saveFileName, JsonUtility.ToJson(loadout));
+   }
+
+   public void Load()
+   {
+      loadout = new D_SaveCustomizeParameter();
+      
+      if(PlayerPrefs.HasKey(saveFileName))
+         loadout = (D_SaveCustomizeParameter)
+      JsonUtility.FromJson(PlayerPrefs.GetString(saveFileName), typeof(D_SaveCustomizeParameter));
+   }
+
+   private void Reset()
+   {
+      saveFileName = transform.name;
    }
 }
