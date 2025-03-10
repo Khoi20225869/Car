@@ -1,82 +1,80 @@
 using UnityEngine;
- 
-[RequireComponent(typeof(Camera))]
-public class D_Camera : MonoBehaviour
+
+public class OrbitCamera : MonoBehaviour
 {
-    public GameObject target;
-    public float distance = 8.5f;
-    public float xSpeed = 150f;
-    public float ySpeed = 100f;
-    [Range(0f, 1f)] public float orbitSpeed = 0.307f;
-    public float yMinLimit = 10f;
-    public float yMaxLimit = 30f;
-    public Vector3 offset = new Vector3(0f, -0.45f, 0f);
- 
-    private bool orbiting = true;
-    private float orbitingTimer = 0f;
-    private float x = 0f;
-    private float y = 0f;
-    private float x_Smoothed = 0f;
-    private float y_Smoothed = 0f;
- 
-    private void OnEnable()
+    public Transform target; // Vật thể mà camera sẽ xoay quanh. Kéo vật thể "TargetObject" vào đây trong Inspector.
+    public float rotationSpeed = 200.0f; // Tốc độ xoay camera (độ/giây)
+    public float distance = 5.0f; // Bán kính xoay của camera (khoảng cách từ camera đến vật thể trung tâm)
+    public float minYAngle = -80.0f; // Góc xoay dọc tối thiểu (độ)
+    public float maxYAngle = 80.0f; // Góc xoay dọc tối đa (độ)
+
+    private float currentXAngle = 0.0f; // Góc xoay ngang hiện tại
+    private float currentYAngle = 0.0f; // Góc xoay dọc hiện tại
+
+    void Start()
     {
+        // Khởi tạo góc xoay ban đầu dựa trên hướng hiện tại của camera
         Vector3 angles = transform.eulerAngles;
-        x = angles.y;
-        y = angles.x;
+        currentXAngle = angles.y;
+        currentYAngle = angles.x;
+
+        // Gọi hàm để thiết lập vị trí camera ban đầu
+        /*UpdateRotationAndPosition();*/
     }
- 
-    private void LateUpdate()
+
+    void Update()
     {
-        // Xử lý đầu vào từ chuột (hoặc chạm)
-        if (Input.GetMouseButton(0))
-        {
-            orbiting = false;
-            orbitingTimer = 1.5f;
- 
-            x += Input.GetAxis("Mouse X") * xSpeed * 0.02f;
-            y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
-        }
- 
-        if (orbitingTimer > 0f)
-        {
-            orbitingTimer -= Time.deltaTime;
-        }
-        else
-        {
-            orbitingTimer = 0f;
-            orbiting = true;
-        }
- 
-        if (orbiting)
-        {
-            x += orbitSpeed * xSpeed * Time.deltaTime;
-        }
- 
-        y = ClampAngle(y, yMinLimit, yMaxLimit);
- 
-        x_Smoothed = Mathf.Lerp(x_Smoothed, x, Time.deltaTime * 10f);
-        y_Smoothed = Mathf.Lerp(y_Smoothed, y, Time.deltaTime * 10f);
- 
-        Quaternion rotation = Quaternion.Euler(y_Smoothed, x_Smoothed, 0);
-        Vector3 position = rotation * new Vector3(0.0f, 0.0f, -distance) + target.transform.position;
-        position += offset;
- 
-        transform.rotation = rotation;
-        transform.position = position;
+        HandleMouseInput(); // Sử dụng chuột để test trên máy tính (có thể bỏ qua nếu chỉ dùng trên thiết bị cảm ứng)
+        HandleTouchInput(); // Xử lý vuốt màn hình cảm ứng
+
+        // Debug.Log("Current Y Angle: " + currentYAngle); // (Dòng debug - có thể bỏ comment để kiểm tra góc xoay dọc)
     }
- 
-    private float ClampAngle(float angle, float min, float max)
+
+    // Hàm xử lý input chuột (để test trên máy tính)
+    void HandleMouseInput()
     {
-        if (angle < -360)
-            angle += 360;
-        if (angle > 360)
-            angle -= 360;
-        return Mathf.Clamp(angle, min, max);
+        if (Input.GetMouseButton(0)) // Nếu giữ chuột trái
+        {
+            float mouseX = Input.GetAxis("Mouse X"); // Độ dịch chuyển chuột theo trục X
+            float mouseY = Input.GetAxis("Mouse Y"); // Độ dịch chuyển chuột theo trục Y
+
+            currentXAngle += mouseX * rotationSpeed * Time.deltaTime; // Cập nhật góc xoay ngang
+            currentYAngle -= mouseY * rotationSpeed * Time.deltaTime; // Cập nhật góc xoay dọc
+            currentYAngle = Mathf.Clamp(currentYAngle, minYAngle, maxYAngle); // Giới hạn góc xoay dọc
+
+            UpdateRotationAndPosition(); // Cập nhật vị trí và hướng của camera
+        }
     }
- 
-    private void Reset()
+
+    // Hàm xử lý input cảm ứng (vuốt màn hình)
+    void HandleTouchInput()
     {
-        GetComponent<Camera>().fieldOfView = 30f;
+        if (Input.touchCount == 1) // Nếu có một ngón tay chạm vào màn hình
+        {
+            Touch touch = Input.GetTouch(0);
+
+            if (touch.phase == TouchPhase.Moved) // Nếu ngón tay di chuyển trên màn hình
+            {
+                Vector2 deltaPos = touch.deltaPosition; // Độ dịch chuyển của ngón tay từ frame trước
+
+                currentXAngle += deltaPos.x * rotationSpeed * Time.deltaTime; // Cập nhật góc xoay ngang
+                currentYAngle -= deltaPos.y * rotationSpeed * Time.deltaTime; // Cập nhật góc xoay dọc
+                currentYAngle = Mathf.Clamp(currentYAngle, minYAngle, maxYAngle); // Giới hạn góc xoay dọc
+
+                UpdateRotationAndPosition(); // Cập nhật vị trí và hướng của camera
+            }
+        }
+    }
+
+    // Hàm cập nhật vị trí và hướng của camera
+    void UpdateRotationAndPosition()
+    {
+        Quaternion rotation = Quaternion.Euler(currentYAngle, currentXAngle, 0); // Tạo Quaternion từ góc xoay - **Đảm bảo thứ tự đúng: dọc (YAngle), ngang (XAngle)**
+        Vector3 desiredPosition = target.position - rotation * Vector3.forward * distance; // Tính toán vị trí mong muốn dựa trên góc xoay và khoảng cách
+
+        transform.rotation = rotation; // Áp dụng rotation cho camera
+        transform.position = desiredPosition; // Áp dụng vị trí cho camera
+
+        transform.LookAt(target); // Đảm bảo camera luôn nhìn vào vật thể trung tâm
     }
 }

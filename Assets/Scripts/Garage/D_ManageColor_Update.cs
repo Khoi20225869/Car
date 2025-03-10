@@ -27,7 +27,6 @@ public class D_ManageColor_Update : MonoBehaviour
         Color newColor = new Color();
         if (index == 1)
         {
-            Debug.Log("kk");
             newColor = new Color(1f, 0.65f, 0f);
         }
         else if (index == 2)
