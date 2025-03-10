@@ -1210,6 +1210,7 @@ GameObject:
   - component: {fileID: -6429431271837845898}
   - component: {fileID: 4932023910398927145}
   - component: {fileID: 4293475195526124245}
+  - component: {fileID: 3367407759284228773}
   m_Layer: 8
   m_Name: 2016_astonmartin_vulcan
   m_TagString: Untagged
@@ -1569,7 +1570,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carController: {fileID: 6827220300605695715}
-  wheelManage: {fileID: 4293475195526124245}
+  upgradeWheel: {fileID: 4293475195526124245}
+  colorManage: {fileID: 3367407759284228773}
   saveFileName: 2016_astonmartin_vulcan
   loadout:
     paint: {r: 1, g: 1, b: 1, a: 0}
@@ -1588,6 +1590,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Apply: {fileID: 4932023910398927145}
   List: {fileID: 11400000, guid: de7053a154590a44bba6f69a813c6657, type: 2}
+--- !u!114 &3367407759284228773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4489173468249688957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a6bd3822ce81848b734e19515710d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Apply: {fileID: 4932023910398927145}
+  Hold: []
 --- !u!1 &4578704509442927992
 GameObject:
   m_ObjectHideFlags: 0

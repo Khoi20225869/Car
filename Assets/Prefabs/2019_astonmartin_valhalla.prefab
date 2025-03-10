@@ -2593,6 +2593,7 @@ GameObject:
   - component: {fileID: -4401401301326590860}
   - component: {fileID: 1839487908414281005}
   - component: {fileID: 4898442658671208741}
+  - component: {fileID: 3024527893449872434}
   m_Layer: 8
   m_Name: 2019_astonmartin_valhalla
   m_TagString: Untagged
@@ -2952,7 +2953,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carController: {fileID: 1534646233352527198}
-  wheelManage: {fileID: 4898442658671208741}
+  upgradeWheel: {fileID: 4898442658671208741}
+  colorManage: {fileID: 3024527893449872434}
   saveFileName: 2019_astonmartin_valhalla
   loadout:
     paint: {r: 1, g: 1, b: 1, a: 0}
@@ -2971,6 +2973,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Apply: {fileID: 1839487908414281005}
   List: {fileID: 11400000, guid: de7053a154590a44bba6f69a813c6657, type: 2}
+--- !u!114 &3024527893449872434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8794934120961253742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a6bd3822ce81848b734e19515710d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Apply: {fileID: 1839487908414281005}
+  Hold: []
 --- !u!1 &8813661931997419371
 GameObject:
   m_ObjectHideFlags: 0

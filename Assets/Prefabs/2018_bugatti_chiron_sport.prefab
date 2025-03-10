@@ -1922,6 +1922,7 @@ GameObject:
   - component: {fileID: 6827304220907511193}
   - component: {fileID: 7951690943962703124}
   - component: {fileID: 8847316169038052984}
+  - component: {fileID: 5639132621314601831}
   m_Layer: 8
   m_Name: 2018_bugatti_chiron_sport
   m_TagString: Untagged
@@ -2281,7 +2282,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carController: {fileID: 180928512090189874}
-  wheelManage: {fileID: 8847316169038052984}
+  upgradeWheel: {fileID: 8847316169038052984}
+  colorManage: {fileID: 5639132621314601831}
   saveFileName: 2018_bugatti_chiron_sport
   loadout:
     paint: {r: 1, g: 1, b: 1, a: 0}
@@ -2300,6 +2302,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Apply: {fileID: 7951690943962703124}
   List: {fileID: 11400000, guid: de7053a154590a44bba6f69a813c6657, type: 2}
+--- !u!114 &5639132621314601831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6525444213168713482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a6bd3822ce81848b734e19515710d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Apply: {fileID: 7951690943962703124}
+  Hold: []
 --- !u!1 &6633092713703352703
 GameObject:
   m_ObjectHideFlags: 0

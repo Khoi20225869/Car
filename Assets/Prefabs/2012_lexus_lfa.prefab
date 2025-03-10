@@ -442,6 +442,8 @@ GameObject:
   - component: {fileID: 4734890966785466280}
   - component: {fileID: 2694439228739860953}
   - component: {fileID: 1628309065416163116}
+  - component: {fileID: 1774643606153611501}
+  - component: {fileID: 764686933448050449}
   m_Layer: 8
   m_Name: 2012_lexus_lfa
   m_TagString: Untagged
@@ -801,7 +803,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carController: {fileID: 6148049137697950882}
-  wheelManage: {fileID: 1628309065416163116}
+  upgradeWheel: {fileID: 1628309065416163116}
+  colorManage: {fileID: 1774643606153611501}
   saveFileName: 2012_lexus_lfa
   loadout:
     paint: {r: 1, g: 1, b: 1, a: 0}
@@ -820,6 +823,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Apply: {fileID: 2694439228739860953}
   List: {fileID: 11400000, guid: de7053a154590a44bba6f69a813c6657, type: 2}
+--- !u!114 &1774643606153611501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2546780441396803691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a6bd3822ce81848b734e19515710d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Apply: {fileID: 2694439228739860953}
+  Hold:
+  - {fileID: 764686933448050449}
+--- !u!114 &764686933448050449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2546780441396803691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a309222e43aff0c42a5bc60dcf463b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Apply: {fileID: 2694439228739860953}
+  bodyRenderer: {fileID: 6633304733117894892}
+  index: 0
 --- !u!1 &3477635960715082971
 GameObject:
   m_ObjectHideFlags: 0

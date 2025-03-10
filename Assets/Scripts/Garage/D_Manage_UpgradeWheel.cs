@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class D_UpgradeWheel : MonoBehaviour
+public class D_Manage_UpgradeWheel : MonoBehaviour
 {
     [SerializeField] private D_ApplyCustomize Apply;
     [SerializeField] private D_HoldWheel List;
