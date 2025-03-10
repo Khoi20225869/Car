@@ -2265,7 +2265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vehicleSaveName: 
-  carController: {fileID: 0}
+  carController: {fileID: 180928512090189874}
 --- !u!1 &6633092713703352703
 GameObject:
   m_ObjectHideFlags: 0

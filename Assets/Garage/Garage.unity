@@ -42826,7 +42826,7 @@ MonoBehaviour:
   ySpeed: 100
   orbitSpeed: 0.458
   yMinLimit: 10
-  yMaxLimit: 30
+  yMaxLimit: 10
   offset: {x: 0, y: -0.25, z: 0}
 --- !u!1 &1182977546
 GameObject:
