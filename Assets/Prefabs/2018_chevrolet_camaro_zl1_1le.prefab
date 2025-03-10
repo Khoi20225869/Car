@@ -435,6 +435,7 @@ GameObject:
   - component: {fileID: 8129770295468099632}
   - component: {fileID: 8974338006189361721}
   - component: {fileID: -5607818466080223591}
+  - component: {fileID: -6960020520509469450}
   m_Layer: 8
   m_Name: 2018_chevrolet_camaro_zl1_1le
   m_TagString: Untagged
@@ -827,7 +828,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Apply: {fileID: 8129770295468099632}
-  Hold: []
+  Hold:
+  - {fileID: -6960020520509469450}
+--- !u!114 &-6960020520509469450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287037571835408681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a309222e43aff0c42a5bc60dcf463b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Apply: {fileID: 8129770295468099632}
+  bodyRenderer:
+  - {fileID: 6453137035070518204}
+  - {fileID: 2802644138300256774}
+  - {fileID: 4772761890026038572}
+  - {fileID: 5081583965747325213}
+  - {fileID: 6700135248271647725}
+  - {fileID: 4115340672028249557}
+  index: 0
 --- !u!1 &1475859561778818544
 GameObject:
   m_ObjectHideFlags: 0

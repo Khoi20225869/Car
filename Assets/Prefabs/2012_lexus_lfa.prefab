@@ -851,7 +851,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Apply: {fileID: 2694439228739860953}
-  bodyRenderer: {fileID: 6633304733117894892}
+  bodyRenderer:
+  - {fileID: 6633304733117894892}
+  - {fileID: 1884825533684377852}
+  - {fileID: 6253999385096523218}
+  - {fileID: 5853419702190734352}
+  - {fileID: 2056743749214324292}
+  - {fileID: 8588280391056989043}
+  - {fileID: 2512148813744986909}
+  - {fileID: 7894547966582761485}
   index: 0
 --- !u!1 &3477635960715082971
 GameObject:

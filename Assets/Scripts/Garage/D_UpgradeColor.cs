@@ -6,15 +6,15 @@ public class D_UpgradeColor : MonoBehaviour
 {
     [SerializeField] private D_ApplyCustomize Apply;
 
-    public MeshRenderer bodyRenderer;
+    public MeshRenderer[] bodyRenderer;
     public int index = 0;
 
     public void UpdateColor(Color newColor)
     {
-        if (!bodyRenderer)
+        if (bodyRenderer.Length == 0)
             return;
-
-        bodyRenderer.materials[index].color = newColor;
+        foreach (MeshRenderer meshRenderer in bodyRenderer)
+            meshRenderer.materials[index].color = newColor;
         Apply.loadout.paint = newColor;
         Apply.Save();
     }

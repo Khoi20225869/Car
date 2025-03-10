@@ -2594,6 +2594,7 @@ GameObject:
   - component: {fileID: 1839487908414281005}
   - component: {fileID: 4898442658671208741}
   - component: {fileID: 3024527893449872434}
+  - component: {fileID: -8106612814767316908}
   m_Layer: 8
   m_Name: 2019_astonmartin_valhalla
   m_TagString: Untagged
@@ -2986,7 +2987,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Apply: {fileID: 1839487908414281005}
-  Hold: []
+  Hold:
+  - {fileID: -8106612814767316908}
+--- !u!114 &-8106612814767316908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8794934120961253742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a309222e43aff0c42a5bc60dcf463b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Apply: {fileID: 1839487908414281005}
+  bodyRenderer:
+  - {fileID: 3760140525191289125}
+  - {fileID: 291137127835358452}
+  - {fileID: 42344154474098474}
+  - {fileID: 6945811212281984626}
+  index: 0
 --- !u!1 &8813661931997419371
 GameObject:
   m_ObjectHideFlags: 0

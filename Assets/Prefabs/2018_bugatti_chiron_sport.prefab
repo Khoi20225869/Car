@@ -1923,6 +1923,7 @@ GameObject:
   - component: {fileID: 7951690943962703124}
   - component: {fileID: 8847316169038052984}
   - component: {fileID: 5639132621314601831}
+  - component: {fileID: -5169829259684926664}
   m_Layer: 8
   m_Name: 2018_bugatti_chiron_sport
   m_TagString: Untagged
@@ -2315,7 +2316,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Apply: {fileID: 7951690943962703124}
-  Hold: []
+  Hold:
+  - {fileID: -5169829259684926664}
+--- !u!114 &-5169829259684926664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6525444213168713482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a309222e43aff0c42a5bc60dcf463b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Apply: {fileID: 7951690943962703124}
+  bodyRenderer:
+  - {fileID: 2724507658356393260}
+  - {fileID: 6736254610789097520}
+  - {fileID: 3837744175309376847}
+  - {fileID: 8997281276744808184}
+  index: 0
 --- !u!1 &6633092713703352703
 GameObject:
   m_ObjectHideFlags: 0

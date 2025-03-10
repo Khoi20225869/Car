@@ -1211,6 +1211,7 @@ GameObject:
   - component: {fileID: 4932023910398927145}
   - component: {fileID: 4293475195526124245}
   - component: {fileID: 3367407759284228773}
+  - component: {fileID: -3069087960262984528}
   m_Layer: 8
   m_Name: 2016_astonmartin_vulcan
   m_TagString: Untagged
@@ -1603,7 +1604,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Apply: {fileID: 4932023910398927145}
-  Hold: []
+  Hold:
+  - {fileID: -3069087960262984528}
+--- !u!114 &-3069087960262984528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4489173468249688957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a309222e43aff0c42a5bc60dcf463b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Apply: {fileID: 4932023910398927145}
+  bodyRenderer:
+  - {fileID: 4760698204198984969}
+  - {fileID: 8214694626161646789}
+  - {fileID: 5448457678971187518}
+  - {fileID: 6618941035526854496}
+  - {fileID: 4248529726798220077}
+  index: 0
 --- !u!1 &4578704509442927992
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,12 +26,12 @@ public class D_ManageCustomize : MonoBehaviour
         Apply.upgradeWheel.UpdateWheel(wheelIndex);
     }
 
-    public void Paint(Color color)
+    public void ChangeColor(int index)
     {
         if (!Apply)
             return;
-        
-        Apply.colorManage.Paint(color);
+
+        Apply.colorManage.Paint(index);
     }
     private void OnDisable()
     {

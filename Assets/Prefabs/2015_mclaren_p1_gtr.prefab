@@ -1085,6 +1085,7 @@ GameObject:
   - component: {fileID: 2716130599545465685}
   - component: {fileID: 1208794536698597635}
   - component: {fileID: 7843293967125268975}
+  - component: {fileID: 5062159981808338028}
   m_Layer: 8
   m_Name: 2015_mclaren_p1_gtr
   m_TagString: Untagged
@@ -1477,7 +1478,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Apply: {fileID: 2716130599545465685}
-  Hold: []
+  Hold:
+  - {fileID: 5062159981808338028}
+--- !u!114 &5062159981808338028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3747604104143127214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a309222e43aff0c42a5bc60dcf463b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Apply: {fileID: 2716130599545465685}
+  bodyRenderer:
+  - {fileID: 2904106595596457713}
+  - {fileID: 8976427512878231553}
+  - {fileID: 7659908743759041050}
+  - {fileID: 4825194074777203541}
+  - {fileID: 9184356305445927659}
+  index: 0
 --- !u!1 &4261057161306828777
 GameObject:
   m_ObjectHideFlags: 0

@@ -1621,6 +1621,7 @@ GameObject:
   - component: {fileID: 4686727781613555433}
   - component: {fileID: 7369499685637458952}
   - component: {fileID: -4195851225655548146}
+  - component: {fileID: -3278203782992608892}
   m_Layer: 8
   m_Name: 2013_lamborghini_veneno
   m_TagString: Untagged
@@ -2013,7 +2014,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Apply: {fileID: 4686727781613555433}
-  Hold: []
+  Hold:
+  - {fileID: -3278203782992608892}
+--- !u!114 &-3278203782992608892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5872992235422213252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a309222e43aff0c42a5bc60dcf463b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Apply: {fileID: 4686727781613555433}
+  bodyRenderer:
+  - {fileID: 4218736849955766183}
+  - {fileID: 7958980824702799167}
+  - {fileID: 2778055668370701657}
+  - {fileID: 8285559649383060888}
+  index: 0
 --- !u!1 &6135038994414127110
 GameObject:
   m_ObjectHideFlags: 0
