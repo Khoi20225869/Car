@@ -16,7 +16,7 @@ MonoBehaviour:
   - initialized: 0
     vehicle: {fileID: 6148049137697950882, guid: cec54213870c08e4aa55b0bc3ae796db, type: 3}
     price: 0
-    engineTorque: 0
+    engineTorque: 100
     handling: 0
     speed: 0
     upgradedEngineEfficiency: 0
@@ -82,6 +82,6 @@ MonoBehaviour:
     engineTorque: 0
     handling: 0
     speed: 0
-    upgradedEngineEfficiency: 0
+    upgradedEngineEfficiency: 1
     upgradedHandlingEfficiency: 0
     upgradedSpeedEfficiency: 0
