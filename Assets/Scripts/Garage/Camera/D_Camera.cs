@@ -1,80 +1,86 @@
 using UnityEngine;
-
-public class OrbitCamera : MonoBehaviour
+using UnityEngine.EventSystems;
+public class D_Camera : MonoBehaviour
 {
-    public Transform target; // Vật thể mà camera sẽ xoay quanh. Kéo vật thể "TargetObject" vào đây trong Inspector.
-    public float rotationSpeed = 200.0f; // Tốc độ xoay camera (độ/giây)
-    public float distance = 5.0f; // Bán kính xoay của camera (khoảng cách từ camera đến vật thể trung tâm)
-    public float minYAngle = -80.0f; // Góc xoay dọc tối thiểu (độ)
-    public float maxYAngle = 80.0f; // Góc xoay dọc tối đa (độ)
+    [Header("Orbit Target")]
+    public Transform target;              // Mục tiêu camera sẽ xoay quanh
+    public float distance = 8f;         // Khoảng cách camera tới mục tiêu
+    public Vector3 offset = Vector3.zero; // Dịch chuyển camera so với tâm mục tiêu
 
-    private float currentXAngle = 0.0f; // Góc xoay ngang hiện tại
-    private float currentYAngle = 0.0f; // Góc xoay dọc hiện tại
+    [Header("Orbit Speeds")]
+    public float xSpeed = 150f;           // Tốc độ xoay ngang
+    public float ySpeed = 100f;           // Tốc độ xoay dọc
 
-    void Start()
+    [Header("Angle Limits")]
+    public float yMinLimit = 10f;         // Giới hạn góc thấp nhất
+    public float yMaxLimit = 80f;         // Giới hạn góc cao nhất
+
+    [Header("Mobile Drag Sensitivity")]
+    public float touchSensitivity = 0.1f; // Độ nhạy kéo trên mobile
+
+    // Biến lưu góc xoay
+    private float x = 0f;  
+    private float y = 20f;  // Góc mặc định nhìn từ trên xuống
+
+    private void Start()
     {
-        // Khởi tạo góc xoay ban đầu dựa trên hướng hiện tại của camera
+        // Lấy góc quay hiện tại
         Vector3 angles = transform.eulerAngles;
-        currentXAngle = angles.y;
-        currentYAngle = angles.x;
-
-        // Gọi hàm để thiết lập vị trí camera ban đầu
-        /*UpdateRotationAndPosition();*/
+        x = angles.y;
+        y = angles.x;
     }
 
-    void Update()
+    private void LateUpdate()
     {
-        HandleMouseInput(); // Sử dụng chuột để test trên máy tính (có thể bỏ qua nếu chỉ dùng trên thiết bị cảm ứng)
-        HandleTouchInput(); // Xử lý vuốt màn hình cảm ứng
+        if (!target) return;
 
-        // Debug.Log("Current Y Angle: " + currentYAngle); // (Dòng debug - có thể bỏ comment để kiểm tra góc xoay dọc)
-    }
-
-    // Hàm xử lý input chuột (để test trên máy tính)
-    void HandleMouseInput()
-    {
-        if (Input.GetMouseButton(0)) // Nếu giữ chuột trái
+        // CÁCH 1: Dùng chuột trên Desktop
+        if (Input.GetMouseButton(0))
         {
-            float mouseX = Input.GetAxis("Mouse X"); // Độ dịch chuyển chuột theo trục X
-            float mouseY = Input.GetAxis("Mouse Y"); // Độ dịch chuyển chuột theo trục Y
+            if (EventSystem.current.IsPointerOverGameObject())
+                return; 
+            // Lấy delta chuột
+            float inputX = Input.GetAxis("Mouse X");
+            float inputY = Input.GetAxis("Mouse Y");
 
-            currentXAngle += mouseX * rotationSpeed * Time.deltaTime; // Cập nhật góc xoay ngang
-            currentYAngle -= mouseY * rotationSpeed * Time.deltaTime; // Cập nhật góc xoay dọc
-            currentYAngle = Mathf.Clamp(currentYAngle, minYAngle, maxYAngle); // Giới hạn góc xoay dọc
-
-            UpdateRotationAndPosition(); // Cập nhật vị trí và hướng của camera
+            x += inputX * xSpeed * Time.deltaTime;
+            y -= inputY * ySpeed * Time.deltaTime;
         }
-    }
 
-    // Hàm xử lý input cảm ứng (vuốt màn hình)
-    void HandleTouchInput()
-    {
-        if (Input.touchCount == 1) // Nếu có một ngón tay chạm vào màn hình
+        // CÁCH 2: Dùng Touch trên Mobile
+        if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
-
-            if (touch.phase == TouchPhase.Moved) // Nếu ngón tay di chuyển trên màn hình
+            if (touch.phase == TouchPhase.Moved)
             {
-                Vector2 deltaPos = touch.deltaPosition; // Độ dịch chuyển của ngón tay từ frame trước
-
-                currentXAngle += deltaPos.x * rotationSpeed * Time.deltaTime; // Cập nhật góc xoay ngang
-                currentYAngle -= deltaPos.y * rotationSpeed * Time.deltaTime; // Cập nhật góc xoay dọc
-                currentYAngle = Mathf.Clamp(currentYAngle, minYAngle, maxYAngle); // Giới hạn góc xoay dọc
-
-                UpdateRotationAndPosition(); // Cập nhật vị trí và hướng của camera
+                if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
+                    return;
+                // Mỗi pixel di chuyển tương đương delta.x, delta.y
+                x += touch.deltaPosition.x * touchSensitivity;
+                y -= touch.deltaPosition.y * touchSensitivity;
             }
         }
+
+        // Giới hạn góc quay dọc [yMinLimit, yMaxLimit]
+        y = ClampAngle(y, yMinLimit, yMaxLimit);
+
+        // Tạo góc quay (x ngang, y dọc)
+        Quaternion rotation = Quaternion.Euler(y, x, 0f);
+
+        // Tính vị trí camera (lùi distance so với mục tiêu, rồi cộng offset)
+        Vector3 negDistance = new Vector3(0f, 0f, -distance);
+        Vector3 position = rotation * negDistance + target.position + offset;
+
+        // Gán vào camera
+        transform.rotation = rotation;
+        transform.position = position;
     }
 
-    // Hàm cập nhật vị trí và hướng của camera
-    void UpdateRotationAndPosition()
+    // Hàm giới hạn góc
+    private float ClampAngle(float angle, float min, float max)
     {
-        Quaternion rotation = Quaternion.Euler(currentYAngle, currentXAngle, 0); // Tạo Quaternion từ góc xoay - **Đảm bảo thứ tự đúng: dọc (YAngle), ngang (XAngle)**
-        Vector3 desiredPosition = target.position - rotation * Vector3.forward * distance; // Tính toán vị trí mong muốn dựa trên góc xoay và khoảng cách
-
-        transform.rotation = rotation; // Áp dụng rotation cho camera
-        transform.position = desiredPosition; // Áp dụng vị trí cho camera
-
-        transform.LookAt(target); // Đảm bảo camera luôn nhìn vào vật thể trung tâm
+        if (angle < -360f) angle += 360f;
+        if (angle > 360f)  angle -= 360f;
+        return Mathf.Clamp(angle, min, max);
     }
 }
