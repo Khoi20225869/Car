@@ -21,12 +21,14 @@ public class D_Setting : ScriptableObject
 
     [Min(0)] public int mainMenuSceneIndex = 0;
 
-    [Header("Default Settings")] [Min(0)] public int defaultMoney = 10000;
+    [Header("Default Settings")] [Min(0)] public int defaultDollar = 10000;
+    [Header("Default Settings")] [Min(0)] public int defaultEuro = 10000;
 
     [Min(0)] public int defaultSelectedVehicleIndex = 0;
     
     [Header("PlayerPrefs")] public string playerPrefsLastSelectedVehicleIndex = "LastSelectedVehicleIndex";
-    public string playerPrefsPlayerMoney = "Money";
+    public string playerPrefsPlayerMoneyDollar = "MoneyDollar";
+    public string plaerPrefsPlayerMoneyEuro = "MoneyEuro";
     public string playerPrefsPlayerVehicle = "Vehicle";
     
 }

@@ -27,19 +27,20 @@ public class D_SceneManager : MonoBehaviour
     public GameObject[] panels;
     
     public TextMeshProUGUI panelTitleText;
-    public TextMeshProUGUI vehiclePriceText;
-    public TextMeshProUGUI cashText;
+    //public TextMeshProUGUI vehiclePriceText;
+    public TextMeshProUGUI dollarText;
+    public TextMeshProUGUI euroPriceText;
     
-    public GameObject selectVehicleButton;
-    public GameObject purchaseVehicleButton;
+    //public GameObject selectVehicleButton;
+    //public GameObject purchaseVehicleButton;
 
-    public Image vehicleStats_Engine;
-    public Image vehicleStats_Handling;
-    public Image vehicleStats_Speed;
+    public Slider Acceleration;
+    public Slider Brake;
+    public Slider Handling;
 
-    [Space()] public Image vehicleStats_Engine_Upgraded;
+    /*[Space()] public Image vehicleStats_Engine_Upgraded;
     public Image vehicleStats_Handling_Upgraded;
-    public Image vehicleStats_Speed_Upgraded;
+    public Image vehicleStats_Speed_Upgraded;*/
 
     public int selectedVehicleIndex = 0;
 
@@ -47,7 +48,7 @@ public class D_SceneManager : MonoBehaviour
     private void Awake()
     {
         allPlayerVehicles = new List<RCC_CarControllerV3>();
-        //selectedVehicleIndex = GetVehicleIndex();
+        selectedVehicleIndex = GetVehicleIndex();
     }
 
     private void Start()
@@ -59,13 +60,14 @@ public class D_SceneManager : MonoBehaviour
 
     private void Update()
     {
-        cashText.text = D_Parameter.GetMoney().ToString("F0");
+        dollarText.text = D_Parameter.GetDollarMoney().ToString("F0");
+        euroPriceText.text = D_Parameter.GetEuroMoney().ToString("F0");
 
-        if (currentVehicle)
+        /*if (currentVehicle)
         {
             selectVehicleButton.SetActive(D_Parameter.IsOwnedVehicle(selectedVehicleIndex));
             purchaseVehicleButton.SetActive(!selectVehicleButton.activeSelf);
-        }
+        }*/
     }
     private void SpawnAllPlayerVehicles()
     {
@@ -130,14 +132,14 @@ public class D_SceneManager : MonoBehaviour
 
     public void PurchaseVehicle()
     {
-        int currentMoney = D_Parameter.GetMoney();
+        /*int currentMoney = D_Parameter.GetMoney();
 
         if (currentMoney >= D_Vehicles.Instance.playerVehicles[selectedVehicleIndex].price)
         {
             D_Parameter.UnlockVehicle(selectedVehicleIndex);
             D_Parameter.ChangeMoney(-D_Vehicles.Instance.playerVehicles[selectedVehicleIndex].price);
             EnableVehicle();
-        }
+        }*/
     }
 
     public void OpenPanel(GameObject activePanel)

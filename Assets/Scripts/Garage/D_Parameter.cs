@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class D_Parameter
 {
-    public static int GetMoney()
+    public static int GetDollarMoney()
     {
-        return PlayerPrefs.GetInt(D_Setting.Instance.playerPrefsPlayerMoney, D_Setting.Instance.defaultMoney);
+        return PlayerPrefs.GetInt(D_Setting.Instance.playerPrefsPlayerMoneyDollar, D_Setting.Instance.defaultDollar);
+    }
+
+    public static int GetEuroMoney()
+    {
+        return PlayerPrefs.GetInt(D_Setting.Instance.plaerPrefsPlayerMoneyEuro, D_Setting.Instance.defaultEuro);
     }
 
     public static void ChangeMoney(int amount)
     {
-        PlayerPrefs.SetInt(D_Setting.Instance.playerPrefsPlayerMoney, GetMoney() + amount);
+        /*PlayerPrefs.SetInt(D_Setting.Instance.playerPrefsPlayerMoney, GetMoney() + amount);*/
     }
 
     public static int GetVehicle() 
