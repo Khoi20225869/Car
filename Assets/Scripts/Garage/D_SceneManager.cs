@@ -38,6 +38,7 @@ public class D_SceneManager : MonoBehaviour
     public Slider Acceleration;
     public Slider Brake;
     public Slider Handling;
+    public Slider Speed;
 
     /*[Space()] public Image vehicleStats_Engine_Upgraded;
     public Image vehicleStats_Handling_Upgraded;
@@ -70,6 +71,8 @@ public class D_SceneManager : MonoBehaviour
         Acceleration.value = D_Vehicles.Instance.playerVehicles[selectedVehicleIndex].acceleration;
         Brake.value = D_Vehicles.Instance.playerVehicles[selectedVehicleIndex].brake;
         Handling.value = D_Vehicles.Instance.playerVehicles[selectedVehicleIndex].handling;
+        Speed.value = D_Vehicles.Instance.playerVehicles[selectedVehicleIndex].speed;
+        
         //D_Vehicles.Instance.playerVehicles[selectedVehicleIndex];
         /*if (currentVehicle)
         {

@@ -30,7 +30,7 @@ public class D_Vehicles : ScriptableObject
         // Thông số ban đầu xe
         [Space()] [Range(0f, 20f)] public float acceleration = .1f;
         [Range(0f, 20f)] public float brake = .1f;
-
+        [Range(100f, 1000f)] public float speed = 100f;
         [Range(0f, 20f)] public float handling = .1f;
         // Hệ số update
         [Space()] [Range(1f, 2f)] public float upgradedAccelerationEfficiency = 1.2f;
