@@ -52,7 +52,7 @@ MonoBehaviour:
   - initialized: 0
     vehicle: {fileID: 180928512090189874, guid: 76860c38d8bce074db02d2ba9474ff70, type: 3}
     price: 4000
-    acceleration: 350
+    acceleration: 10
     brake: 9
     handling: 8.5
     upgradedAccelerationEfficiency: 1.2
@@ -79,7 +79,7 @@ MonoBehaviour:
   - initialized: 0
     vehicle: {fileID: 9034434998587326771, guid: 14f873988281ea444b9a847057cebb22, type: 3}
     price: 7000
-    acceleration: 350
+    acceleration: 10
     brake: 9.5
     handling: 9.5
     upgradedAccelerationEfficiency: 1.2

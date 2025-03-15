@@ -28,10 +28,10 @@ public class D_Vehicles : ScriptableObject
         public RCC_CarControllerV3 vehicle; // Prefab được liên kết với đối tượng này
         [Min(0)] public int price = 0;      // Giá tiền của xe , cần đủ tiền để mo khóa 
         // Thông số ban đầu xe
-        [Space()] [Range(0f, 10f)] public float acceleration = .1f;
-        [Range(0f, 10f)] public float brake = .1f;
+        [Space()] [Range(0f, 20f)] public float acceleration = .1f;
+        [Range(0f, 20f)] public float brake = .1f;
 
-        [Range(0f, 10f)] public float handling = .1f;
+        [Range(0f, 20f)] public float handling = .1f;
         // Hệ số update
         [Space()] [Range(1f, 2f)] public float upgradedAccelerationEfficiency = 1.2f;
         [Range(1f,2f)] public float upgradedBrakeEfficiency = 1.2f;
