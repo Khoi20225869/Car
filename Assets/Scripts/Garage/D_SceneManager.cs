@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class D_SceneManager : MonoBehaviour
 {
@@ -56,13 +57,20 @@ public class D_SceneManager : MonoBehaviour
         SpawnAllPlayerVehicles();
 
         EnableVehicle();
+
+        panelTitleText.text = SceneManager.GetActiveScene().name;
     }
 
     private void Update()
     {
         dollarText.text = D_Parameter.GetDollarMoney().ToString("F0");
         euroPriceText.text = D_Parameter.GetEuroMoney().ToString("F0");
+        
 
+        Acceleration.value = D_Vehicles.Instance.playerVehicles[selectedVehicleIndex].acceleration;
+        Brake.value = D_Vehicles.Instance.playerVehicles[selectedVehicleIndex].brake;
+        Handling.value = D_Vehicles.Instance.playerVehicles[selectedVehicleIndex].handling;
+        //D_Vehicles.Instance.playerVehicles[selectedVehicleIndex];
         /*if (currentVehicle)
         {
             selectVehicleButton.SetActive(D_Parameter.IsOwnedVehicle(selectedVehicleIndex));
@@ -156,5 +164,10 @@ public class D_SceneManager : MonoBehaviour
     public void SetPanelTittleText(string tittle)
     {
         panelTitleText.text = tittle;
+    }
+
+    public void OpenScene(int index)
+    {
+        SceneManager.LoadScene(index);
     }
 }
