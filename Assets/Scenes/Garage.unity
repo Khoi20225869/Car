@@ -36386,7 +36386,7 @@ MonoBehaviour:
   customizeViewPoint: {fileID: 605936686}
   defaultViewPoint: {fileID: 18367988}
   wheelTransform: {fileID: 1479978347}
-  lerpTime: 1.5
+  lerpTime: 3
   x: 0
   y: 20
 --- !u!1 &1199807317
