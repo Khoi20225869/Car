@@ -45,8 +45,7 @@ public class D_Camera : MonoBehaviour
     private Quaternion rotation;
     private Vector3 negDistance;
     private Vector3 position;
-
-    public GameObject ButtonBack;
+    
     private void Start()
     {
         Vector3 angles = transform.eulerAngles;
@@ -79,7 +78,6 @@ public class D_Camera : MonoBehaviour
 
             if (transform.position == customizeViewPoint.position)
             {
-                ButtonBack.SetActive(true);
                 isMovingForward = false;
                 isAtCustomize = true;
                 orbitTimer = 0f;
@@ -89,14 +87,12 @@ public class D_Camera : MonoBehaviour
             else if (transform.position == wheelTransform.position)
             {
                 isMovingForward = false;
-                ButtonBack.SetActive(true);
             }
             else
                 return;
         }
         if (isMovingBack)
         {
-            Debug.Log("khoi");
             transitionTimer += Time.deltaTime / lerpTime;
             transform.position = Vector3.Lerp(transform.position, defaultViewPoint.position, transitionTimer);
             transform.rotation = Quaternion.Lerp(transform.rotation, defaultViewPoint.rotation, transitionTimer);
@@ -187,12 +183,14 @@ public class D_Camera : MonoBehaviour
     /// </summary>
     public void MoveBack()
     {
-        isAtCustomize = false;
-        isMovingBack = true;
-        transitionTimer = 0f;
-        Paint_Point = false;
-        Wheel_Point = false;
-        ButtonBack.SetActive(false);
+        if (D_SceneManager.count != 0)
+        {
+            isAtCustomize = false;
+            isMovingBack = true;
+            transitionTimer = 0f;
+            Paint_Point = false;
+            Wheel_Point = false;
+        }
     }
 
     public void MoveToWheelPoint()

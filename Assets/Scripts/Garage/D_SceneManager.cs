@@ -18,6 +18,8 @@ public class D_SceneManager : MonoBehaviour
             return instance;
         }
     }
+
+    internal static int count = 0;
     
     private List<RCC_CarControllerV3> allPlayerVehicles = new List<RCC_CarControllerV3>();
 
@@ -25,7 +27,10 @@ public class D_SceneManager : MonoBehaviour
 
     public RCC_CarControllerV3 currentVehicle;
 
+    
     public GameObject[] panels;
+
+    public GameObject[] mainPanels;
     
     public TextMeshProUGUI panelTitleText;
     //public TextMeshProUGUI vehiclePriceText;
@@ -156,6 +161,7 @@ public class D_SceneManager : MonoBehaviour
 
     public void OpenPanel(GameObject activePanel)
     {
+        ++count; 
         for(int i = 0 ; i < panels.Length; i++)
             panels[i].SetActive(false);
 
@@ -172,6 +178,18 @@ public class D_SceneManager : MonoBehaviour
 
     public void OpenScene(int index)
     {
-        SceneManager.LoadScene(index);
+        if (count == 0)
+        {
+            SceneManager.LoadScene(index);
+        }
+        else
+        {
+            --count;
+            for(int i = 0 ; i < panels.Length; i++)
+                panels[i].SetActive(false);
+
+            for (int i = 0; i < mainPanels.Length; i++)
+                mainPanels[i].SetActive(true);
+        }
     }
 }

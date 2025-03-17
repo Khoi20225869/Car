@@ -809,6 +809,9 @@ MonoBehaviour:
   loadout:
     paint: {r: 1, g: 1, b: 1, a: 0}
     wheel: -1
+    engine: 0
+    handling: 0
+    speed: 0
 --- !u!114 &1628309065416163116
 MonoBehaviour:
   m_ObjectHideFlags: 0
