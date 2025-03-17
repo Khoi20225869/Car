@@ -24,6 +24,7 @@ public class D_Camera : MonoBehaviour
     [Header("Smooth Transition")]
     public Transform customizeViewPoint;    // Điểm đặt camera khi nhấn Customize
     public Transform defaultViewPoint;      // Vị trí mặc định của camera trước khi vào Customize
+    public Transform wheelTransform;
     public float lerpTime = 1.5f;           // Thời gian di chuyển camera đến vị trí mới
     
     private bool isAtCustomize = false;     // Kiểm tra camera có ở vị trí Customize không
@@ -33,6 +34,9 @@ public class D_Camera : MonoBehaviour
     private bool isMovingBack = false;
     private bool isMovingForward = false;
 
+    private bool Paint_Point = false;
+    private bool Wheel_Point = false;
+
     [SerializeField]private float x = 0f;                   
     [SerializeField]private float y = 10f;                  
     private float orbitTimer = 0f;           // Thời gian không có tương tác để kích hoạt orbit
@@ -41,6 +45,8 @@ public class D_Camera : MonoBehaviour
     private Quaternion rotation;
     private Vector3 negDistance;
     private Vector3 position;
+
+    public GameObject ButtonBack;
     private void Start()
     {
         Vector3 angles = transform.eulerAngles;
@@ -58,26 +64,39 @@ public class D_Camera : MonoBehaviour
     {
         if (isMovingForward)
         {
-            transitionTimer += Time.deltaTime / lerpTime;
-            transform.position = Vector3.Lerp(transform.position, customizeViewPoint.position, transitionTimer);
-            transform.rotation = Quaternion.Lerp(transform.rotation, customizeViewPoint.rotation, transitionTimer);
+            if (Paint_Point)
+            {
+                transitionTimer += Time.deltaTime / lerpTime;
+                transform.position = Vector3.Lerp(transform.position, customizeViewPoint.position, transitionTimer);
+                transform.rotation = Quaternion.Lerp(transform.rotation, customizeViewPoint.rotation, transitionTimer);
+            }
+            else if (Wheel_Point)
+            {
+                transitionTimer += Time.deltaTime / lerpTime;
+                transform.position = Vector3.Lerp(transform.position, wheelTransform.position, transitionTimer);
+                transform.rotation = Quaternion.Lerp(transform.rotation, wheelTransform.rotation, transitionTimer);
+            }
 
             if (transform.position == customizeViewPoint.position)
             {
-                rotation = new Quaternion();
-                negDistance = new Vector3();
-                position = new Vector3();
+                ButtonBack.SetActive(true);
                 isMovingForward = false;
                 isAtCustomize = true;
                 orbitTimer = 0f;
                 x = 180.847f;
                 y = 10f;
             }
-            else 
+            else if (transform.position == wheelTransform.position)
+            {
+                isMovingForward = false;
+                ButtonBack.SetActive(true);
+            }
+            else
                 return;
         }
         if (isMovingBack)
         {
+            Debug.Log("khoi");
             transitionTimer += Time.deltaTime / lerpTime;
             transform.position = Vector3.Lerp(transform.position, defaultViewPoint.position, transitionTimer);
             transform.rotation = Quaternion.Lerp(transform.rotation, defaultViewPoint.rotation, transitionTimer);
@@ -160,6 +179,7 @@ public class D_Camera : MonoBehaviour
     {
         isMovingForward = true;
         transitionTimer = 0f;
+        Paint_Point = true;
     }
 
     /// <summary>
@@ -169,6 +189,16 @@ public class D_Camera : MonoBehaviour
     {
         isAtCustomize = false;
         isMovingBack = true;
+        transitionTimer = 0f;
+        Paint_Point = false;
+        Wheel_Point = false;
+        ButtonBack.SetActive(false);
+    }
+
+    public void MoveToWheelPoint()
+    {
+        isMovingForward = true;
+        Wheel_Point = true;
         transitionTimer = 0f;
     }
 }

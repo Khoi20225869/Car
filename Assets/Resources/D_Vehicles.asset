@@ -16,72 +16,80 @@ MonoBehaviour:
   - initialized: 0
     vehicle: {fileID: 6148049137697950882, guid: cec54213870c08e4aa55b0bc3ae796db, type: 3}
     price: 0
-    acceleration: 9.5
-    brake: 9
-    handling: 9.2
+    acceleration: 3.7
+    brake: 8.5
+    speed: 325
+    handling: 8.3
     upgradedAccelerationEfficiency: 1.2
     upgradedBrakeEfficiency: 1.2
     upgradedHangdlingEfficiency: 1.2
   - initialized: 0
     vehicle: {fileID: 3179726825678589029, guid: e63fb9e2788010245844c74af5558657, type: 3}
     price: 1000
-    acceleration: 10
-    brake: 9.5
-    handling: 9.5
+    acceleration: 2.8
+    brake: 9
+    speed: 355
+    handling: 9
     upgradedAccelerationEfficiency: 1.2
     upgradedBrakeEfficiency: 1.2
     upgradedHangdlingEfficiency: 1.2
   - initialized: 0
     vehicle: {fileID: 2043430982058194867, guid: c126f7a1f373fc248bc7072118d732ae, type: 3}
     price: 2000
-    acceleration: 10
-    brake: 9.5
-    handling: 10
+    acceleration: 2.5
+    brake: 9.2
+    speed: 380
+    handling: 9.2
     upgradedAccelerationEfficiency: 1.2
     upgradedBrakeEfficiency: 1.2
     upgradedHangdlingEfficiency: 1.2
   - initialized: 0
     vehicle: {fileID: 6827220300605695715, guid: 870515e668c37054baded85baea48490, type: 3}
     price: 3000
-    acceleration: 9.8
-    brake: 9
-    handling: 9.8
+    acceleration: 2.9
+    brake: 9.3
+    speed: 320
+    handling: 9
     upgradedAccelerationEfficiency: 1.2
     upgradedBrakeEfficiency: 1.2
     upgradedHangdlingEfficiency: 1.2
   - initialized: 0
     vehicle: {fileID: 180928512090189874, guid: 76860c38d8bce074db02d2ba9474ff70, type: 3}
     price: 4000
-    acceleration: 10
-    brake: 9
-    handling: 8.5
+    acceleration: 2.4
+    brake: 9.5
+    speed: 420
+    handling: 8.8
     upgradedAccelerationEfficiency: 1.2
     upgradedBrakeEfficiency: 1.2
     upgradedHangdlingEfficiency: 1.2
   - initialized: 0
     vehicle: {fileID: 3952537371307611177, guid: 5847a901b3bc41a43bd31c83c9990219, type: 3}
     price: 5000
-    acceleration: 8.5
-    brake: 8.5
-    handling: 8
+    acceleration: 3.9
+    brake: 8.3
+    speed: 315
+    handling: 8.2
     upgradedAccelerationEfficiency: 1.2
     upgradedBrakeEfficiency: 1.2
     upgradedHangdlingEfficiency: 1.2
   - initialized: 0
     vehicle: {fileID: 1534646233352527198, guid: 858c40fb4c613564f9749e20dbfb15b7, type: 3}
     price: 6000
-    acceleration: 9.5
-    brake: 9
-    handling: 9.5
+    acceleration: 2.5
+    brake: 8.8
+    speed: 350
+    handling: 9.1
     upgradedAccelerationEfficiency: 1.2
     upgradedBrakeEfficiency: 1.2
     upgradedHangdlingEfficiency: 1.2
   - initialized: 0
     vehicle: {fileID: 9034434998587326771, guid: 14f873988281ea444b9a847057cebb22, type: 3}
     price: 7000
-    acceleration: 10
-    brake: 9.5
-    handling: 9.5
+    acceleration: 2.7
+    brake: 8.9
+    speed: 350
+    handling: 8.9
     upgradedAccelerationEfficiency: 1.2
     upgradedBrakeEfficiency: 1.2
     upgradedHangdlingEfficiency: 1.2
