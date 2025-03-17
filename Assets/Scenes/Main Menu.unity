@@ -251,6 +251,17 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!114 &786505278 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7412992919987667782, guid: a5c522dd5f073c644b50d800cbdba742, type: 3}
+  m_PrefabInstance: {fileID: 1766765493}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &875712743
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,6 +328,7 @@ MonoBehaviour:
   panelTitleText: {fileID: 4073528085611663836}
   dollarText: {fileID: 2820387438119381069}
   euroPriceText: {fileID: 7290312464966891365}
+  carName: {fileID: 786505278}
   Acceleration: {fileID: 231966090}
   Brake: {fileID: 1940882602}
   Handling: {fileID: 2115447998}

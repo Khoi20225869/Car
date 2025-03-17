@@ -31,7 +31,8 @@ public class D_SceneManager : MonoBehaviour
     //public TextMeshProUGUI vehiclePriceText;
     public TextMeshProUGUI dollarText;
     public TextMeshProUGUI euroPriceText;
-    
+
+    public TextMeshProUGUI carName;
     //public GameObject selectVehicleButton;
     //public GameObject purchaseVehicleButton;
 
@@ -60,13 +61,13 @@ public class D_SceneManager : MonoBehaviour
         EnableVehicle();
 
         panelTitleText.text = SceneManager.GetActiveScene().name;
+        carName.text = D_Vehicles.Instance.playerVehicles[selectedVehicleIndex].carName;
     }
 
     private void Update()
     {
         dollarText.text = D_Parameter.GetDollarMoney().ToString("F0");
         euroPriceText.text = D_Parameter.GetEuroMoney().ToString("F0");
-        
 
         Acceleration.value = D_Vehicles.Instance.playerVehicles[selectedVehicleIndex].acceleration;
         Brake.value = D_Vehicles.Instance.playerVehicles[selectedVehicleIndex].brake;

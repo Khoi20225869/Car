@@ -8,15 +8,15 @@ public class D_Vehicles : ScriptableObject
 {
     private static D_Vehicles instance;
 
-    
+
     public static D_Vehicles Instance
     {
         get
         {
-            if(instance == null)
-                instance= Resources.Load<D_Vehicles>("D_Vehicles")
+            if (instance == null)
+                instance = Resources.Load<D_Vehicles>("D_Vehicles")
                     as D_Vehicles;
-            
+
             return instance;
         }
     }
@@ -24,6 +24,7 @@ public class D_Vehicles : ScriptableObject
     [System.Serializable]
     public class PlayerVehicle
     {
+        public string carName = "";
         public bool initialized = false; // Check xe được cấu hình chưa 
         public RCC_CarControllerV3 vehicle; // Prefab được liên kết với đối tượng này
         [Min(0)] public int price = 0;      // Giá tiền của xe , cần đủ tiền để mo khóa 

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: D_Vehicles
   m_EditorClassIdentifier: 
   playerVehicles:
-  - initialized: 0
+  - carName: Duck 1
+    initialized: 0
     vehicle: {fileID: 6148049137697950882, guid: cec54213870c08e4aa55b0bc3ae796db, type: 3}
     price: 0
     acceleration: 3.7
@@ -23,7 +24,8 @@ MonoBehaviour:
     upgradedAccelerationEfficiency: 1.2
     upgradedBrakeEfficiency: 1.2
     upgradedHangdlingEfficiency: 1.2
-  - initialized: 0
+  - carName: Duck 2
+    initialized: 0
     vehicle: {fileID: 3179726825678589029, guid: e63fb9e2788010245844c74af5558657, type: 3}
     price: 1000
     acceleration: 2.8
@@ -33,7 +35,8 @@ MonoBehaviour:
     upgradedAccelerationEfficiency: 1.2
     upgradedBrakeEfficiency: 1.2
     upgradedHangdlingEfficiency: 1.2
-  - initialized: 0
+  - carName: Duck 3
+    initialized: 0
     vehicle: {fileID: 2043430982058194867, guid: c126f7a1f373fc248bc7072118d732ae, type: 3}
     price: 2000
     acceleration: 2.5
@@ -43,7 +46,8 @@ MonoBehaviour:
     upgradedAccelerationEfficiency: 1.2
     upgradedBrakeEfficiency: 1.2
     upgradedHangdlingEfficiency: 1.2
-  - initialized: 0
+  - carName: Duck 4
+    initialized: 0
     vehicle: {fileID: 6827220300605695715, guid: 870515e668c37054baded85baea48490, type: 3}
     price: 3000
     acceleration: 2.9
@@ -53,7 +57,8 @@ MonoBehaviour:
     upgradedAccelerationEfficiency: 1.2
     upgradedBrakeEfficiency: 1.2
     upgradedHangdlingEfficiency: 1.2
-  - initialized: 0
+  - carName: Duck 5
+    initialized: 0
     vehicle: {fileID: 180928512090189874, guid: 76860c38d8bce074db02d2ba9474ff70, type: 3}
     price: 4000
     acceleration: 2.4
@@ -63,7 +68,8 @@ MonoBehaviour:
     upgradedAccelerationEfficiency: 1.2
     upgradedBrakeEfficiency: 1.2
     upgradedHangdlingEfficiency: 1.2
-  - initialized: 0
+  - carName: Duck 6
+    initialized: 0
     vehicle: {fileID: 3952537371307611177, guid: 5847a901b3bc41a43bd31c83c9990219, type: 3}
     price: 5000
     acceleration: 3.9
@@ -73,7 +79,8 @@ MonoBehaviour:
     upgradedAccelerationEfficiency: 1.2
     upgradedBrakeEfficiency: 1.2
     upgradedHangdlingEfficiency: 1.2
-  - initialized: 0
+  - carName: Duck 7
+    initialized: 0
     vehicle: {fileID: 1534646233352527198, guid: 858c40fb4c613564f9749e20dbfb15b7, type: 3}
     price: 6000
     acceleration: 2.5
@@ -83,7 +90,8 @@ MonoBehaviour:
     upgradedAccelerationEfficiency: 1.2
     upgradedBrakeEfficiency: 1.2
     upgradedHangdlingEfficiency: 1.2
-  - initialized: 0
+  - carName: Duck 8
+    initialized: 0
     vehicle: {fileID: 9034434998587326771, guid: 14f873988281ea444b9a847057cebb22, type: 3}
     price: 7000
     acceleration: 2.7
